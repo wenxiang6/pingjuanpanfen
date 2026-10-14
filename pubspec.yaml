@@ -1,0 +1,37 @@
+name: judge_assistant
+description: 阅卷辅助小助手
+version: 0.1.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  window_manager: ^0.5.0
+  screen_retriever: ^0.2.0
+  desktop_screenshot: ^0.0.4
+  sqflite_common_ffi: ^2.3.0
+  path_provider: ^2.1.0
+  path: ^1.9.0
+  ffi: ^2.1.0
+  http: ^1.2.1
+  connectivity_plus: ^6.0.0
+  image: ^4.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+# 使用操作系统自带的 SQLite（macOS: libsqlite3.dylib），
+# 避免 sqlite3 的 build hook 从 GitHub 下载预编译动态库。
+hooks:
+  user_defines:
+    sqlite3:
+      source: system
